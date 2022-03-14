@@ -1,5 +1,6 @@
-const { Router } = require('express');
-const FornecedorController = require('../../controller/FornecedorController');
+import { Router } from 'express'
+import FornecedorController from '../controller/FornecedorController.js'
+
 const router = Router();
 
 router.post('/fornecedor/criartabela', FornecedorController.criarTabela)
@@ -12,4 +13,4 @@ router.post('/fornecedor', (req, res)=> {
     res.status(200).json(`Rota funciona`)
 })
 
-module.exports = router
+export default router

@@ -1,5 +1,5 @@
-const res = require('express/lib/response')
-const bdFornecedor = require('../src/model/fornecedor.js')
+
+import bdFornecedor from '../model/fornecedor.js'
 
 class FornecedorController{
     
@@ -22,4 +22,4 @@ class FornecedorController{
 }
 
 
-module.exports = FornecedorController
+export default FornecedorController

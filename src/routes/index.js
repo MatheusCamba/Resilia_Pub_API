@@ -1,5 +1,5 @@
-const fornecedor = require('./fornecedorRoute.js')
+import fornecedor from './fornecedorRoute.js'
 
-module.exports = (app) =>{
+export default (app) =>{
     app.use(fornecedor)
 }
