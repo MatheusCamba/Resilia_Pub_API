@@ -11,6 +11,8 @@ router.post('/fornecedor/criartabela', FornecedorController.criarTabela)
 
 router.get('/fornecedor/buscartodosfornecedores', FornecedorController.getTodosFornecedores)
 
+router.get('/fornecedor/buscarumfornecedor/:id', FornecedorController.buscarUmFornecedor)
+
 router.post('/fornecedor/novofornecedor', FornecedorController.postarNovoFornecedor)
 
 router.post('/fornecedor', (req, res)=> {

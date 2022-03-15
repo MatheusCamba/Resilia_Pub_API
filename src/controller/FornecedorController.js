@@ -1,7 +1,7 @@
 import bdFornecedor from '../model/fornecedor.js'
 
 class FornecedorController{
-    
+    //METODO CREATE
     static criarTabela(req, res){
         const tabela_fornecedor = `
         CREATE TABLE IF NOT EXISTS fornecedor (
@@ -18,19 +18,23 @@ class FornecedorController{
             }
         })
     }
-
+    //METODO DE BUSCA DE TODOS
     static getTodosFornecedores(req, res){
-        const busca_fornecedor = `
+        const busca_todosFornecedores = `
         SELECT * FROM fornecedor`
-        bdFornecedor.all(busca_fornecedor, (error, result) =>{
-            if(error){
-                res.status(404).send('Error ao buscar', error.message)
-            } else {
-                res.status(200).json(result)
+        bdFornecedor.all(busca_todosFornecedores, (e, result) =>{
+            try{
+                if(e){
+                    res.status(404).send('Error ao buscar', e.message)
+                } else {
+                    res.status(200).json(result)
+                }
+            } catch(error){
+                    res.status(404).send('Error ao buscar', error.message)
             }
         })
     }
-
+    //METODO DE INSERIR NOVO FORNECEDOR
     static async postarNovoFornecedor(req, res){
         const newFornecedor = await new Promise ((resolve, reject) => {
             const result = {
@@ -48,12 +52,29 @@ class FornecedorController{
                 if(e){
                     res.status(404).send('ERRO')
                 }else{
-
                     res.status(200).send('Novo fornecedor incluído com sucesso!')
                 }
                 
             }catch(error){
                 res.status(404).send('Error ao buscar', error.message)
+            }
+        })
+    }
+    //METODO DE BUSCAR UM FORNECEDOR
+    static buscarUmFornecedor(req, res){
+        const unico_fornecedor =  req.params.id
+
+        const query_fornecedor = `SELECT * FROM fornecedor WHERE id = ${unico_fornecedor}`
+
+        bdFornecedor.get(query_fornecedor, (e, row) =>{
+            try{
+                if(e){
+                    res.status(404).send('Erro ao buscar o registro', e.message)
+                } else{
+                    res.status(200).send(row)
+                }
+            } catch(error){
+                res.status(404).send('Erro ao buscar o registro', error.message)
             }
         })
     }
