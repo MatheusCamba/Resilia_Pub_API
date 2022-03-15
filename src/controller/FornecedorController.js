@@ -78,6 +78,21 @@ class FornecedorController{
             }
         })
     }
+    //METODO PARA DELETAR REGISTRO
+    static deletarPorId(req, res){
+        const del_fornecedor = req.params.id
+
+        const query_del_fornecedor = `DELETE FROM fornecedor WHERE id = ${del_fornecedor}`
+        bdFornecedor.run(query_del_fornecedor, (e) =>{
+            try{
+                if(!e){
+                    res.status(200).send('Registro deletado com sucesso!')
+                }
+            }catch(error){
+                res.status(404).send('Erro ao deletar registro: ', error.message)
+            }
+        })
+    }
 }
 
 
