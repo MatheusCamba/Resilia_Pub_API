@@ -89,6 +89,31 @@ class FornecedorController{
             }
         })
     }
+    //METODO DE UPDATE
+    static async attFornecedorPorId(req, res){
+        const att_fornecedor = await new Promise((resolve, reject) =>{
+            const resultado_fornecedor = {
+                nome:req.body.nome,
+                cnpj:parseInt(req.body.cnpj),
+                telefone:parseInt(req.body.telefone)
+            }
+            resolve(resultado_fornecedor)
+        }) 
+        const id = req.params.id
+
+        const query_att = `UPDATE fornecedor SET nome='${att_fornecedor.nome}', cnpj=${att_fornecedor.cnpj}, telefone=${att_fornecedor.telefone} WHERE id = ${id}`
+
+        bdFornecedor.run(query_att, (e) => {
+            try{
+                if(!e){
+                    res.status(200).send('Fornecedor atualizado com sucesso!')
+                } 
+            }catch(error){
+                res.status(404).send('Erro ao atualizar o registro: ', error.message)
+            }
+        })
+
+    }
 }
 
 

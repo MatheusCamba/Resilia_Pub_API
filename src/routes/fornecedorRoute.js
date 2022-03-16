@@ -17,6 +17,8 @@ router.post('/fornecedor/novofornecedor', FornecedorController.postarNovoFornece
 
 router.delete('/fornecedor/deletarfornecedor/:id', FornecedorController.deletarPorId)
 
+router.put('/fornecedor/atualizarfornecedor/:id', FornecedorController.attFornecedorPorId)
+
 router.post('/fornecedor', (req, res)=> {
     res.status(200).json(`Rota funcionando`)
 })
