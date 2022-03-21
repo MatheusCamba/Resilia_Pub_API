@@ -2,11 +2,11 @@ import bdFornecedor from '../models/fornecedor.js'
 
  export default class MetodosFornecedor{
     //METODO CRIAR TABELA
-    static criarTabela(){
-            try{
-                return new Promise((resolve, reject) => {
-                   const scriptCreateTable = 
-                   `CREATE TABLE IF NOT EXISTS fornecedor (
+    static newTable(){
+        try{
+            return new Promise((resolve, reject) => {
+               const scriptCreateTable = 
+                  `CREATE TABLE IF NOT EXISTS fornecedor (
                        id INTEGER PRIMARY KEY AUTOINCREMENT,
                        nome VARCHAR(50),
                        cnpj INTEGER,
@@ -20,15 +20,36 @@ import bdFornecedor from '../models/fornecedor.js'
                          reject("Erro ao criar tabela")
                       }
                    })
-                })
+            })
              } catch(e){
                 console.error(e.message)
-            }
-            
+            } 
+    }
+
+    //METODO DE INSERIR NOVO FORNECEDOR
+    static async newFornecedor(nome, cnpj, telefone){
+        try{
+
+            return new Promise ((resolve, reject) =>{
+                const novo_fornecedor = `INSERT INTO fornecedor (nome, cnpj, telefone) VALUES ('${nome}', ${cnpj}, ${telefone})`
+                bdFornecedor.run(novo_fornecedor, (e) =>{
+                    
+                    if(!e){
+                        resolve('Fornecedor adicionado')
+                    } else {
+                        reject('Erro ao postar!')
+                    }       
+                })
+
+            })
+        } catch(e){
+            console.error(e.message)
         }
+        
+    }
 
     //METODO DE BUSCA DE TODOS
-    static getTodosFornecedores(){
+    static getFornecedores(){
         try{
             return new Promise((resolve,reject) =>{
                 const busca_todosFornecedores = `
@@ -52,38 +73,8 @@ import bdFornecedor from '../models/fornecedor.js'
     
     }
 
-    //METODO DE INSERIR NOVO FORNECEDOR
-    static async postarNovoFornecedor(nome, cnpj, telefone){
-        // const newFornecedor = await new Promise ((resolve, reject) => {
-        //     const result = {
-        //         nome:req.body.nome,
-        //         cnpj:parseInt(req.body.cnpj),
-        //         telefone:parseInt(req.body.telefone)
-        //     }
-        //     resolve(result)
-        // })
-        try{
-
-            return new Promise ((resolve, reject) =>{
-                const novo_fornecedor = `INSERT INTO fornecedor (nome, cnpj, telefone) VALUES ('${nome}', ${cnpj}, ${telefone})`
-                bdFornecedor.run(novo_fornecedor, (e) =>{
-                    
-                    if(!e){
-                        resolve('Fornecedor adicionado')
-                    } else {
-                        reject('Erro ao postar!')
-                    }       
-                })
-    
-            })
-        } catch(e){
-            console.error(e.message)
-        }
-        
-    }
-
-    //METODO DE BUSCAR UM FORNECEDOR ID
-    static buscarUmFornecedor(id){
+    //METODO DE BUSCAR UM FORNECEDOR POR ID
+    static searchById(id){
         return new Promise ((resolve, reject) =>{
             try{
                 const query_fornecedor = `SELECT * FROM fornecedor WHERE id = ${id}`
@@ -103,7 +94,7 @@ import bdFornecedor from '../models/fornecedor.js'
     }
 
     //METODO PARA DELETAR REGISTRO
-    static deletarPorId(id){
+    static deleteById(id){
         
         return new Promise ((resolve, reject) =>{
             try{
@@ -124,15 +115,7 @@ import bdFornecedor from '../models/fornecedor.js'
     }
 
     //METODO DE UPDATE
-    static async attFornecedorPorId(id, nome, cnpj, telefone){
-        // const att_fornecedor = await new Promise((resolve, reject) =>{
-        //     const resultado_fornecedor = {
-        //         nome:req.body.nome,
-        //         cnpj:parseInt(req.body.cnpj),
-        //         telefone:parseInt(req.body.telefone)
-        //     }
-        //     resolve(resultado_fornecedor)
-        // }) 
+    static async updateById(id, nome, cnpj, telefone){
         return new Promise ((resolve, reject) => {
             try{
     

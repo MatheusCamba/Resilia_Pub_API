@@ -9,15 +9,15 @@ router.get('/fornecedor', (req, res)=>{
 
 router.post('/fornecedor/criartabela', FornecedorController.createTable)
 
-router.get('/fornecedor/buscartodosfornecedores', FornecedorController.buscarFornecedores)
+router.post('/fornecedor/novofornecedor', FornecedorController.addNewFornecedor)
 
-router.get('/fornecedor/buscarumfornecedor/:id', FornecedorController.buscarPorId)
+router.get('/fornecedor/buscartodosfornecedores', FornecedorController.searchFornecedores)
 
-router.post('/fornecedor/novofornecedor', FornecedorController.addNovoFornecedor)
+router.get('/fornecedor/buscarumfornecedor/:id', FornecedorController.searchOnlyOne)
 
-router.delete('/fornecedor/deletarfornecedor/:id', FornecedorController.deletarFornecedor)
+router.delete('/fornecedor/deletarfornecedor/:id', FornecedorController.deleteOne)
 
-router.put('/fornecedor/atualizarfornecedor/:id', FornecedorController.attPorId)
+router.put('/fornecedor/atualizarfornecedor/:id', FornecedorController.updateOne)
 
 router.post('/fornecedor', (req, res)=> {
     res.status(200).json(`Rota funcionando`)
