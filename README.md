@@ -58,7 +58,7 @@ npm install --save-dev nodemon
 **Observação:** Essa aplicação será executada por padrão na porta 3000 do seu localHost, caso essa porta esteja sendo utilizada por outra aplicação basta mudar o valor da variável 'port' do arquivo 'app.js' para um valor de porta disponível em seu sistema.
 
 # Rotas da API
-Essa aplicação possui um conjunto de rotas que torna possível o uso de todos os verbos HTTP necessários para a realização do CRUD. Além disso você pode utilizar essa API remotamente através da seguinte url hospedada no servidor do Heroku: `heroku.com`
+Essa aplicação possui um conjunto de rotas que torna possível o uso de todos os verbos HTTP necessários para a realização do CRUD. Além disso você pode utilizar essa API remotamente através da seguinte url hospedada no servidor do Heroku: `https://resilia-api-pub.herokuapp.com/`
 
 ### **1 - Salvar as informações de um fornecedor**
 
