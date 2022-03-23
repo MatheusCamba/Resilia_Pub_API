@@ -5,13 +5,13 @@ O Resilia-PUB é uma API Rest de gerenciamento de PUBS construída em colaboraç
 # Ferramentas utilizadas
 
 <div>
-   <img width='50px' height='50px' src='https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/nodejs/nodejs-original.svg'>
-   <img width='50px' height='50px' style="margin: 5px" src='https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/npm/npm-original-wordmark.svg'>
-   <img width='50px' height='50px' style="margin: 5px" src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg'>
-   <img width='50px' height='50px' style="margin: 5px" src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg' >
+   <img width='113px' height='91px' src='https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/nodejs/nodejs-original.svg'>
+   <img width='113px' height='91px' style="margin: 5px" src='https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/npm/npm-original-wordmark.svg'>
+   <img width='113px' height='91px' style="margin: 5px" src='https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg'>
+   <img width='113px' height='91px' style="margin: 5px" src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/markdown/markdown-original.svg' >
    <img width='100px' height='50px' style="background-color: #FFF; margin: 5px" src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/SQLite370.svg/382px-SQLite370.svg.png'>
-   <img width='50px' height='50px' style="margin: 5px" src='https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/vscode/vscode-original.svg'>
-   <img width='50px' height='50px' style="margin: 5px" src='https://www.pngitem.com/pimgs/m/463-4634376_insomnia-rest-client-icon-hd-png-download.png'>
+   <img width='113px' height='91px' style="margin: 5px" src='https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/vscode/vscode-original.svg'>
+   <img width='113px' height='91px' style="margin: 5px" src='./img/logo_insomnia.png'>
 </div>
 
 # Como utilizar a aplicação
